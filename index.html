@@ -4,58 +4,53 @@
 <meta charset="UTF-8">
 <title>About Me</title>
 <style>
-  :root {
-    --bg: #FFD9A0;
-    --text: #3a2a1a;
-    --card-bg: #fff8f0dd;
-    --accent: #FF8C42;
-  }
-  body.afternoon {
-    --bg: #87CEEB;
-    --text: #1a2a3a;
-    --card-bg: #ffffffdd;
-    --accent: #1E90FF;
-  }
-  body.sunset {
-    --bg: #FF7E5F;
-    --text: #3a1a1a;
-    --card-bg: #fff0eadd;
-    --accent: #C1440E;
-  }
-  body.latenight {
-    --bg: #0b1027;
-    --text: #eee;
-    --card-bg: #1c1f3aee;
-    --accent: #7B68EE;
-  }
   * { box-sizing: border-box; }
-  body {
+  html, body {
     margin: 0;
+    height: 100%;
+  }
+  body {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg);
-    color: var(--text);
     font-family: 'Segoe UI', sans-serif;
-    transition: background 0.6s ease, color 0.6s ease;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.8s ease;
+    position: relative;
   }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 0;
+  }
+  body.sunrise    { background-image: url('images/sunrise.jpg'); }
+  body.afternoon  { background-image: url('images/afternoon.jpg'); }
+  body.sunset     { background-image: url('images/sunset.jpg'); }
+  body.latenight  { background-image: url('images/latenight.jpg'); }
+
   .card {
-    background: var(--card-bg);
+    position: relative;
+    z-index: 1;
+    background: rgba(20,20,30,0.55);
     padding: 40px;
     border-radius: 20px;
     max-width: 500px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    backdrop-filter: blur(8px);
   }
   .emoji { font-size: 3rem; }
-  h1 { margin-top: 0; color: var(--accent); }
+  h1 { margin-top: 0; color: #FFD9A0; }
   .stage-label {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--accent);
+    color: #FFD9A0;
     font-weight: bold;
     margin-bottom: 8px;
   }
@@ -69,8 +64,8 @@
     padding: 8px 16px;
     border: none;
     border-radius: 30px;
-    background: var(--accent);
-    color: #fff;
+    background: #FFD9A0;
+    color: #222;
     font-weight: bold;
     cursor: pointer;
   }
@@ -80,8 +75,8 @@
     margin: 6px 8px;
     padding: 8px 16px;
     border-radius: 30px;
-    background: var(--accent);
-    color: #fff;
+    background: #FFD9A0;
+    color: #222;
     text-decoration: none;
     font-weight: bold;
   }
@@ -96,13 +91,13 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--accent);
+    background: #FFD9A0;
     opacity: 0.3;
   }
   .dots span.active { opacity: 1; }
 </style>
 </head>
-<body>
+<body class="sunrise">
 
 <div class="card">
   <div class="emoji" id="emoji">🌅</div>
@@ -121,7 +116,7 @@
 <script>
   const stages = [
     {
-      cls: '',
+      cls: 'sunrise',
       emoji: '🌅',
       label: 'Sunrise · Welcome',
       html: `<h1>Hi, welcome to my page 👋</h1>
