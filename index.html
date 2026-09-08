@@ -28,10 +28,10 @@
     background: rgba(0,0,0,0.35);
     z-index: 0;
   }
-  body.sunrise    { background-image: url(https://thumbs.dreamstime.com/b/sunflower-fields-sunset-beautiful-composite-sunrise-over-field-golden-yellow-sunflowers-101549985.jpg); }
-  body.afternoon  { background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSywbGfhPBFYGqoWIaBieoSS1Wz7Qc6mUbxlvHAad8ehw&s=10); }
-  body.sunset     { background-image: url(https://template.canva.com/EAG2yQtjD8g/1/0/900w-I3bXINZdhEI.jpg); }
-  body.latenight  { background-image: url(https://mikkolagerstedt.com/images/generated/blog-heroes/images/blog/blog/the-art-of-night-photography/Mikko-Lagerstedt-Night-Of-Fog-1280w.avif); }
+  body.sunrise    { background-image: url("https://thumbs.dreamstime.com/b/sunflower-fields-sunset-beautiful-composite-sunrise-over-field-golden-yellow-sunflowers-101549985.jpg"); }
+  body.afternoon  { background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSywbGfhPBFYGqoWIaBieoSS1Wz7Qc6mUbxlvHAad8ehw&s=10"); }
+  body.sunset     { background-image: url("https://template.canva.com/EAG2yQtjD8g/1/0/900w-I3bXINZdhEI.jpg"); }
+  body.latenight  { background-image: url("https://mikkolagerstedt.com/images/generated/blog-heroes/images/blog/blog/the-art-of-night-photography/Mikko-Lagerstedt-Night-Of-Fog-1280w.avif"); }
 
   .card {
     position: relative;
@@ -116,36 +116,27 @@
 <script>
   const stages = [
     {
-      cls: 'sunrise',
-      emoji: '🌅',
-      label: 'Sunrise · Welcome',
-      html: `<h1>Hi, welcome to my page 👋</h1>
-             <p>I'm [Your Name]. Take a walk with me through the day — sunrise, afternoon, sunset, and night — and get to know me along the way.</p>`
+           cls: 'sunrise',
+      html: `<h1>Hello!</h1>
+             <p>I'm Howard. Welcome to my introductory page :3.</p>`
     },
     {
-      cls: 'afternoon',
-      emoji: '☀️',
-      label: 'Afternoon · Introduction',
-      html: `<h1>A little about me</h1>
-             <p>I'm a [your role, e.g. "student developer"] studying [field] at [school/uni]. I enjoy building things and learning new skills, and this page is one of my projects!</p>`
+           cls: 'afternoon',
+      html: `<h1>Introduction about me/h1>
+             <p>I am Howard Chen, a first year student, studying Civil Engineering at UNSW. I enjoy learning new skills and meeting new people. </p>`
     },
     {
-      cls: 'sunset',
-      emoji: '🌇',
-      label: 'Sunset · Interests',
-      html: `<h1>What I love</h1>
-             <p>🎮 [Interest 1]<br>📚 [Interest 2]<br>🎨 [Interest 3]<br>🎵 [Interest 4]</p>`
+           cls: 'sunset',
+      html: `<h1>Some of my interests</h1>
+             <p>Fencing<br>Exploring cultures(travelling and engaging internationally)<br>Board games(I have not dislike a single board game yet)<br>Doomscrolling (Unhealthily)</p>`
     },
     {
       cls: 'latenight',
-      emoji: '🌙',
-      label: 'Late Night · Find Me',
-      html: `<h1>Let's connect</h1>
+      html: `<h1>My links/h1>
              <div class="links">
-               <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
-               <a href="https://linkedin.com/in/yourhandle" target="_blank">LinkedIn</a>
-               <a href="https://github.com/yourhandle" target="_blank">GitHub</a>
-               <a href="mailto:you@email.com">Email</a>
+               <a href="https://www.instagram.com/howard_c0/">Instagram</a>
+               <a href="https://www.linkedin.com/in/howard-chen-7ba2a324b/">LinkedIn</a>
+              <a href="z5594727@ad.unsw.edu.au">Email</a>
              </div>`
     }
   ];
