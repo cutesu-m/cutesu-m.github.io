@@ -1,2 +1,87 @@
-DevSoc Student Project: Day and Night Website 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Me</title>
+<style>
+  :root {
+    --bg: #87CEEB;
+    --text: #222;
+    --card-bg: #ffffffcc;
+    --accent: #FFA500;
+  }
+  body.night {
+    --bg: #0b1027;
+    --text: #eee;
+    --card-bg: #1c1f3aee;
+    --accent: #ffd54f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, var(--bg), #ffffff33);
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
+    transition: background 0.6s ease, color 0.6s ease;
+    overflow-x: hidden;
+  }
+  .card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 480px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    backdrop-filter: blur(6px);
+  }
+  h1 { margin-top: 0; color: var(--accent); }
+  .toggle-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background: var(--accent);
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .toggle-btn:hover { opacity: 0.85; }
+  .emoji { font-size: 3rem; }
+</style>
+</head>
+<body>
 
+<div class="card">
+  <div class="emoji" id="emoji">🌞</div>
+  <h1>Hi, I'm [Your Name]</h1>
+  <p>
+    I'm a [your role, e.g. "student developer"] passionate about
+    [your interests]. This page shows off a Day & Night theme —
+    click the button to see it switch!
+  </p>
+  <p>
+    🌅 By day: I like [something about you]<br>
+    🌙 By night: I like [something else about you]
+  </p>
+  <button class="toggle-btn" onclick="toggleTheme()">Switch to Night</button>
+</div>
+
+<script>
+  function toggleTheme() {
+    const body = document.body;
+    const emoji = document.getElementById('emoji');
+    const btn = document.querySelector('.toggle-btn');
+    body.classList.toggle('night');
+    const isNight = body.classList.contains('night');
+    emoji.textContent = isNight ? '🌙' : '🌞';
+    btn.textContent = isNight ? 'Switch to Day' : 'Switch to Night';
+  }
+</script>
+
+</body>
+</html>
